@@ -12,12 +12,6 @@ export default function BuilderHeader({
   linkedIn,
   share,
 }) {
-  const params = useParams();
-  // // console.log(builderData.length);
-  const [linkedInDropdown, setLinkedInDropdown] = useState(false);
-
-  const [active, setActive] = useState('resume');
-
   // var brorserHistory = BrowserRouter.
   const history = useHistory();
 
@@ -63,34 +57,6 @@ export default function BuilderHeader({
     setTimeout(() => window.location.reload(), 1000);
   };
 
-  const go_to_another_page_Modal = (path) => {
-    confirmAlert({
-      customUI: ({ onClose }) => {
-        return (
-          <div className='addPage_Modal login_modal'>
-            <div>
-              {/* <h1></h1> */}
-              <p>By clicking it, You can loose all your data</p>
-              <p>Do you want to Continue?</p>
-              <div>
-                <a href='#'>
-                  <button onClick={() => onClose()}>No</button>
-                </a>
-                <a href='#'>
-                  <button
-                    onClick={() => (history.push(`/${path}`), onClose())}
-                    className='login_modal_secondary_btn'
-                  >
-                    Yes
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        );
-      },
-    });
-  };
   console.log(share);
   return (
     <header className='builder_header'>
@@ -120,7 +86,7 @@ export default function BuilderHeader({
         <div className='builder_header_main_btns'>
           <div className='main_logo_header'>
             <div>
-              <img src='/assets/images/logo_black.png' alt='logo' />
+              <img src='/assets/images/logoblack.png' alt='logo' />
             </div>
           </div>
         </div>

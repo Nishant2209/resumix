@@ -17,7 +17,7 @@ export default function ProfileHeader({ userData, admin }) {
   return (
     <header className='header'>
       <div className='header_logo'>
-        <img src='/assets/images/logo_black.png' alt='logo' />
+        <img src='/assets/images/logoblack.png' alt='logo' />
       </div>
       <div className='header_main'>
         <div className='header_search'>
