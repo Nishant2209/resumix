@@ -5,9 +5,6 @@ import ProfileHeader from '../../Components/Profile/ProfileHeader';
 import ProfileSidebar from '../../Components/Profile/ProfileSidebar';
 import { reset_password } from '../../API/index';
 
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -16,11 +13,9 @@ export default function ProfileUpdatePassword({ userLoggedIn, userData }) {
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
 
-  // const [email, setEmail] = useState('');
   const [oldPwd, setOldPwd] = useState('');
   const [newPwd, setNewPwd] = useState('');
   const [confPwd, setConfPwd] = useState('');
-  const [revealPwd, setRevealPwd] = useState(false);
   const [message, setMessage] = useState({ message: true, type: '' });
 
   const data = {

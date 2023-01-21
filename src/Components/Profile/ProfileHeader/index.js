@@ -42,7 +42,7 @@ export default function ProfileHeader({ userData, admin }) {
             </div>
           ) : (
             <Link
-              to={'/builderChooseBlankOrExample'}
+              to={'/chooseTemplate'}
               className='go_to_builder go_to_builder_header'
             >
               Go to Builder

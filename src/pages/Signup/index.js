@@ -1,37 +1,20 @@
 import React, { useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-import {
-  register,
-  register_social,
-  resend_email,
-  create_stripe_customer,
-} from '../../API/index';
-
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
-
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { register } from '../../API/index';
 
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function Signup({ userLoggedIn }) {
-  const history = useHistory();
-
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
-  const [confirmPwd, setConfirmPwd] = useState('');
   const [revealPwd, setRevealPwd] = useState(false);
   const [notRobot, setNotRobot] = useState(false);
   const [message, setMessage] = useState({ message: true, type: '' });
-  // // console.log(userLoggedIn)
-
-  const [type, setType] = useState('');
   // console.log(type)
 
   const main_data = useRef(null);
@@ -47,45 +30,6 @@ export default function Signup({ userLoggedIn }) {
     confirmPassword: pwd,
     acceptTerms: true,
     notRobot: notRobot,
-  };
-
-  const model = (message) => {
-    confirmAlert({
-      customUI: ({ onClose }) => {
-        return (
-          <div className='notaRobotModel'>
-            {/* <div> */}
-            {/* <h1>Are you sure?</h1> */}
-            <p>{message}</p>
-            <button onClick={onClose}>Close</button>
-            {/* </div> */}
-          </div>
-        );
-      },
-    });
-  };
-
-  const RegSuccessModel = (message) => {
-    confirmAlert({
-      customUI: ({ onClose }) => {
-        return (
-          <div className='notaRobotModel regSuccessModel'>
-            {/* <div> */}
-            {/* <h1>Are you sure?</h1> */}
-            <p>{message}</p>
-            <button
-              onClick={() => {
-                onClose();
-                history.push(`/login/${email}`);
-              }}
-            >
-              Close
-            </button>
-            {/* </div> */}
-          </div>
-        );
-      },
-    });
   };
 
   const handleRegister = async (e) => {
@@ -125,21 +69,9 @@ export default function Signup({ userLoggedIn }) {
     }
   };
 
-  const handleResend = (e) => {
-    // // console.log(email)
-    setMessage({ message: false, type: '' });
-
-    resend_email(email).then((res) => {
-      // // console.log(res)
-      if (res.status === 200) {
-        setMessage({ message: res.data.message, type: 'success' });
-      }
-    });
-  };
-
   return userLoggedIn ? (
     // <div>Logged in</div>
-    <Redirect to='/builder' /> //profile
+    <Redirect to='/profile/dashboard' /> //profile
   ) : (
     <div className='app'>
       <div className='resumeVector_login_left'>

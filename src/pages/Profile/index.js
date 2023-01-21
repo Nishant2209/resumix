@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { ThreeDots } from 'react-loader-spinner';
 import Toast from 'react-bootstrap/Toast';
@@ -290,10 +290,6 @@ export default function Profile({ userData, userLoggedIn, setUserData }) {
               <button style={{ visibility: editToggle ? 'visible' : 'hidden' }}>
                 Save
               </button>
-            </div>
-            <div className='resetPassword'>
-              <Link to='/profile/update_password'>Reset Password ?</Link>
-              <div onClick={handleLogout}>Logout</div>
             </div>
           </div>
         </div>

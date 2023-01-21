@@ -1,17 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useParams, useHistory, Redirect } from 'react-router-dom';
-
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-
-import graphic1 from '../../Assets/svg/Build-Your-Resume-With-Confidencee.svg';
-import graphic2 from '../../Assets/svg/If-For-Any-Reason-You-Dont-Appreciate-Templaates.svg';
 
 import {
   authenticate,
@@ -36,8 +30,6 @@ export default function Login({
   const [rememberMe, setRememberMe] = useState(false);
   const [erroeMessage, setErroeMessage] = useState(true);
 
-  const [type, setType] = useState('google');
-
   const main_data = useRef(null);
   const bar = useRef(null);
   const regSuccess = useRef(null);
@@ -46,22 +38,6 @@ export default function Login({
     email: email,
     password: pwd,
     rememberMe: rememberMe,
-  };
-
-  const model = (message) => {
-    confirmAlert({
-      customUI: ({ onClose }) => {
-        return (
-          <div className='notaRobotModel'>
-            {/* <div> */}
-            {/* <h1>Are you sure?</h1> */}
-            <p>{message}</p>
-            <button onClick={onClose}>Close</button>
-            {/* </div> */}
-          </div>
-        );
-      },
-    });
   };
 
   const handleLogin = (e) => {
@@ -75,16 +51,8 @@ export default function Login({
           localStorage.setItem('jwtToken', res.data.jwtToken);
           setUserData(res.data);
           setUserLoggedIn(true);
-          // history.push('/profile')
           // // console.log(res);
-          if (res.data.role === 'Admin') {
-            history.push('/admin');
-          } else {
-            history.push('/profile/dashboard');
-            // history.push('/builder');
-          }
-
-          // setTimeout(() => window.location.reload(), 1000);
+          history.push('/profile/dashboard');
         } else {
           // // console.log(res)
           if (res === 'Please verify your email first') {
@@ -128,86 +96,6 @@ export default function Login({
         setErroeMessage(res.data.message);
       }
     });
-  };
-
-  const handleGoogleSignInFailure = (response) => {
-    // console.log(response);
-  };
-
-  const handleGoogleSignInSuccess = (response) => {
-    // console.log(response);
-    localStorage.clear();
-
-    const accessToken = response.accessToken;
-    const tokenId = response.tokenId;
-    const name = response.profileObj.name;
-    const email = response.profileObj.email;
-    const googleId = response.profileObj.googleId;
-    const imageUrl = response.profileObj.imageUrl;
-
-    const socialLoginData = {
-      email: response.profileObj.email,
-      type: type,
-      token: response.accessToken,
-    };
-    // console.log(socialLoginData);
-
-    authenticate_social(socialLoginData).then((res) => {
-      // console.log(res);
-      if (res.status === 200) {
-        // console.log(res.data);
-        localStorage.setItem('id', res.data.id);
-        localStorage.setItem('jwtToken', res.data.jwtToken);
-        // setUserLoggedIn(true)
-        history.push('/profile');
-        // history.push('/builder');
-
-        setTimeout(() => window.location.reload(), 1000);
-      } else {
-        // // console.log(res)
-        if (res === 'Please verify your email first') {
-          setTimeout(() => {
-            main_data.current.style.display = 'none';
-          }, 1000);
-          setTimeout(() => {
-            bar.current.style.display = 'block';
-            bar.current.classList.add('expandBar');
-          }, 2000);
-          setTimeout(() => {
-            bar.current.classList.add('expandBarAgain');
-          }, 3000);
-          setTimeout(() => {
-            setErroeMessage(res);
-            bar.current.style.display = 'none';
-            regSuccess.current.style.display = 'flex';
-          }, 4000);
-        } else {
-          setErroeMessage(res);
-        }
-      }
-    });
-
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('googleId', googleId);
-    localStorage.setItem('imageUrl', imageUrl);
-  };
-
-  function responseFacebook(response) {
-    localStorage.clear();
-
-    const name = response.name;
-    const email = response.email;
-    const accessToken = response.accessToken;
-    const userID = response.userID;
-
-    localStorage.setItem('name', name);
-    localStorage.setItem('email', email);
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('userID', userID);
-  }
-
-  const componentClicked = (response) => {
-    console.log(response);
   };
 
   return !userLoggedIn ? (
@@ -338,9 +226,7 @@ export default function Login({
         </div>
       </div>
     </div>
-  ) : userData.role === 'Admin' ? (
-    <Redirect to='/admin' />
   ) : (
-    <Redirect to='/builder' />
+    <Redirect to='/profile/dashboard' />
   );
 }
