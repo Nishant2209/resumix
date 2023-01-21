@@ -5746,7 +5746,7 @@ export default function Builder({ setUserLoggedIn, userData, userLoggedIn }) {
           <div className='addPage_Modal login_modal '>
             <div>
               <h1>Loving it?</h1>
-              <p>Let's create your CVJury account.</p>
+              <p>Let's create your Resumix account.</p>
               <div>
                 <a href='/login'>
                   <button>Login</button>
