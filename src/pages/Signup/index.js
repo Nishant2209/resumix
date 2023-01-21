@@ -18,8 +18,6 @@ export default function Signup({ userLoggedIn }) {
   // console.log(type)
 
   const main_data = useRef(null);
-  const bar = useRef(null);
-  const regSuccess = useRef(null);
 
   const data = {
     title: 'Mr',
@@ -39,26 +37,16 @@ export default function Signup({ userLoggedIn }) {
       register({ ...data }).then((resp) => {
         if (resp.status === 200) {
           setMessage({ message: resp.data.message, type: 'success' });
+          setFirstName('')
+          setLastName('')
+          setEmail('')
+          setPwd('')
         } else {
           // // console.log(res)
           setMessage({ message: resp, type: 'error' });
         }
       });
 
-      setTimeout(() => {
-        main_data.current.style.display = 'none';
-      }, 1000);
-      setTimeout(() => {
-        bar.current.style.display = 'block';
-        bar.current.classList.add('expandBar');
-      }, 2000);
-      setTimeout(() => {
-        bar.current.classList.add('expandBarAgain');
-      }, 3000);
-      setTimeout(() => {
-        bar.current.style.display = 'none';
-        regSuccess.current.style.display = 'flex';
-      }, 4000);
     } else if (
       firstName === '' ||
       lastName === '' ||
@@ -125,12 +113,14 @@ export default function Signup({ userLoggedIn }) {
                 id='firstName'
                 className='firstName'
                 type='text'
+                value={firstName}
                 placeholder='first name'
                 onChange={(e) => setFirstName(e.target.value)}
               />
               <input
                 id='lastName'
                 className='lastName'
+                value={lastName}
                 type='text'
                 placeholder='last name'
                 onChange={(e) => setLastName(e.target.value)}
@@ -140,6 +130,7 @@ export default function Signup({ userLoggedIn }) {
               id='email'
               className='email'
               type='email'
+              value={email}
               placeholder='john@example.com'
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -175,31 +166,6 @@ export default function Signup({ userLoggedIn }) {
             </button>
           </div>
 
-          <div ref={bar} className='mail_footer_only'></div>
-          <div ref={regSuccess} className='mailSuccess mailSuccess_signup'>
-
-            <p className='mailSuccess_signUp'>
-              {message.message || <Skeleton className={'loader_signUp'} />}
-            </p>
-            <div className='singnUp_links'>
-              <Link to='/login' className='backToLogin'>
-                Back to Login?
-                <svg
-                  className='h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M9 5l7 7-7 7'
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>

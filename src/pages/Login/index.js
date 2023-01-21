@@ -48,25 +48,7 @@ export default function Login({
           history.push('/profile/dashboard');
         } else {
           // // console.log(res)
-          if (res === 'Please verify your email first') {
-            setTimeout(() => {
-              main_data.current.style.display = 'none';
-            }, 1000);
-            setTimeout(() => {
-              bar.current.style.display = 'block';
-              bar.current.classList.add('expandBar');
-            }, 2000);
-            setTimeout(() => {
-              bar.current.classList.add('expandBarAgain');
-            }, 3000);
-            setTimeout(() => {
-              setErroeMessage(res);
-              bar.current.style.display = 'none';
-              regSuccess.current.style.display = 'flex';
-            }, 4000);
-          } else {
-            setErroeMessage(res);
-          }
+          setErroeMessage(res);
         }
       });
     } else if (email === '' || pwd === '') {
@@ -191,35 +173,6 @@ export default function Login({
             </button>
           </div>
 
-          <div ref={bar} className='mail_footer_only'></div>
-          <div ref={regSuccess} className='mailSuccess mailSuccess_signup'>
-            <img
-              className='mailSuccess_img'
-              src='/assets/images/mailSended.png'
-              alt='mailSended'
-            />
-            {/* <p  className='mailSuccess_text'>Registration successful, please check your email for verification instructions</p> */}
-            <p className='mailSuccess_signUp'>
-              {erroeMessage || <Skeleton className={'loader_signUp'} />}
-            </p>
-            <div className='singnUp_links'>
-              <p className='backToLogin resendMail' onClick={handleResend}>
-                Resend email
-              </p>
-              <p className='backToLogin'>
-                Back to{' '}
-                <Link
-                  onClick={() =>
-                    setTimeout(() => window.location.reload(), 500)
-                  }
-                  to='/login'
-                >
-                  Login
-                </Link>
-                ?
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
