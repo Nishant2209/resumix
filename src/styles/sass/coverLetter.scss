@@ -1,0 +1,103 @@
+.react-confirm-alert-overlay {
+  z-index: 100 !important;
+}
+
+.change_template_sidebar_cover_letter {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  width: 27%;
+  height: 84vh;
+  transform: translateX(-100%);
+  transition: 0.7s ease-in-out;
+  top: 120px;
+  padding: 2rem 1rem;
+  overflow-y: scroll;
+
+  .change_template_sidebar_header {
+    font-size: 1.1rem;
+  }
+
+  .change_template_sidebar_main {
+    padding-top: 1rem;
+
+    .sidebar_templates {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .sidebar_template {
+        width: 49%;
+        // height: 250px;
+        // background-color: black;
+        transition: 0.3s ease-in-out;
+        background: white;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        border: 1px solid #cacaca;
+        border-radius: 5px;
+        padding: 5px;
+        height: 265px;
+        .templateHeading {
+          font-size: 12px;
+          color: #8d8d8d;
+          font-weight: bold;
+          margin-bottom: 5px;
+          width: 100%;
+        }
+
+        img {
+          max-width: 100%;
+          height: 212px;
+          transition: 0.3s ease-in-out;
+          min-width: 145px;
+          // border: 2px solid transparent;
+        }
+      }
+      .template_selected {
+        border: 2px solid #195190ff;
+      }
+      .sidebar_template:hover {
+        border: 2px solid #195190ff;
+        border-radius: 5px;
+        z-index: 1;
+        box-shadow: 0px 0px 5px #195190ff;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .change_template_sidebar_dropdown {
+    font-size: 7px;
+    font-weight: bold;
+
+    .change_template_sidebar_dropdown_setting {
+      .Dropdown-control {
+        width: 100px;
+      }
+      .Dropdown-menu {
+        width: 100px;
+      }
+    }
+  }
+}
+.show_change_template_sidebar {
+  transform: translateX(0%);
+}
+
+.sidebar_category_dropdown_chooseTemplate {
+  .Dropdown-control {
+    width: 200px !important;
+  }
+  .Dropdown-menu {
+    width: 200px !important;
+    max-height: 300px !important;
+  }
+}

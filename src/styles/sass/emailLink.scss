@@ -1,0 +1,54 @@
+.main_email {
+  background-color: #ffffff;
+  width: 600px;
+  height: 480px;
+  padding: 50px 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  margin-top: 6rem;
+}
+
+.logo_email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  font-size: 10px;
+}
+.name_email {
+  font-size: 18px;
+  margin-top: 44px;
+  margin-bottom: 0px;
+}
+.subtext {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.btn {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+.btn_email {
+  width: 160px;
+  border: none;
+  background: #195190ff;
+  color: white;
+  border-radius: 10px;
+  padding: 9px;
+  font-size: 12px;
+  margin: auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.main_text {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #707070;
+}
+.email_page_support {
+  span {
+    color: #094bcf;
+  }
+}
