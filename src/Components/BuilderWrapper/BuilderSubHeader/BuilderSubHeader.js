@@ -207,9 +207,9 @@ export default function BuilderHeader({
   const dateFormat = [
     '1 / 22',
     '01 / 22',
-    '01 / 2022',
-    'Jan 2022',
-    'January 2022',
+    '01 / 2023',
+    'Jan 2023',
+    'January 2023',
   ];
   const optionsPageBorderStyles = [
     'solid',

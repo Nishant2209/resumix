@@ -59,10 +59,10 @@ const DATE = {
       </ul>
       <p style={{ fontWeight: 'bold' }}>Examples</p>
       <ul>
-        <li>January 1st, 2022</li>
-        <li>1st January 2022</li>
-        <li>01/01/2022</li>
-        <li>1/1/2022</li>
+        <li>January 1st, 2023</li>
+        <li>1st January 2023</li>
+        <li>01/01/2023</li>
+        <li>1/1/2023</li>
       </ul>
     </div>
   ),

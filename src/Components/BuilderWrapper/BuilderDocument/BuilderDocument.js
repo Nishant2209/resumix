@@ -122,11 +122,11 @@ export default function BuilderDocument({
       ? moment().format('M / YY')
       : docummentDateFormat === '01 / 22'
       ? moment().format('MM / YY')
-      : docummentDateFormat === '01 / 2022'
+      : docummentDateFormat === '01 / 2023'
       ? moment().format('MM / YYYY')
-      : docummentDateFormat === 'Jan 2022'
+      : docummentDateFormat === 'Jan 2023'
       ? moment().format('MMM YYYY')
-      : docummentDateFormat === 'January 2022'
+      : docummentDateFormat === 'January 2023'
       ? moment().format('MMMM YYYY')
       : null;
 
