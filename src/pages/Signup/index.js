@@ -177,13 +177,6 @@ export default function Signup({ userLoggedIn }) {
 
           <div ref={bar} className='mail_footer_only'></div>
           <div ref={regSuccess} className='mailSuccess mailSuccess_signup'>
-            <div className='reg_success_img'>
-              <img
-                className='mailSuccess_img'
-                src='/assets/images/successful.png'
-                alt='mailSended'
-              />
-            </div>
 
             <p className='mailSuccess_signUp'>
               {message.message || <Skeleton className={'loader_signUp'} />}
