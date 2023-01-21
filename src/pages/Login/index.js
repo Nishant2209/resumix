@@ -1,17 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Link, useParams, useHistory, Redirect } from 'react-router-dom';
 
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import {
-  authenticate,
-  resend_email,
-  authenticate_social,
-} from '../../API/index';
+import { authenticate, resend_email } from '../../API/index';
 
 export default function Login({
   userLoggedIn,
@@ -104,7 +97,7 @@ export default function Login({
       <div className='resumeVector_login_left'>
         {/* <img src={graphic1} alt='graphic1' /> */}
         <img
-          src='/assets/images/character_1.png'
+          src='/assets/images/vectore1.png'
           alt='graphic1'
           style={{ maxWidth: '400px' }}
         />
@@ -117,7 +110,11 @@ export default function Login({
         />
       </div>
       <div style={{ margin: '3rem' }} className=''>
-        <img src='/assets/images/logo.png' alt='logo' />
+        <img
+          style={{ maxWidth: '220px' }}
+          src='/assets/images/logo.png'
+          alt='logo'
+        />
       </div>
       <div className='hero'>
         <div className='main'>
