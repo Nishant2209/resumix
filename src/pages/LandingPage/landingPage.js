@@ -8,11 +8,18 @@ export default function Landingpage() {
         <img
           src='/assets/images/logo.png'
           alt='logo'
-          style={{ maxWidth: '220px' }}
+          style={{ maxWidth: '240px', height: '50px', alignSelf: 'center' }}
         />
+      <div className='landingPge_btn'>
+        <Link to='/chooseTemplate'>
+          <button>Dive into Resumix</button>
+        </Link>
+      </div>
       </div>
 
-      <div className='landingPge_heading'>Let's Get Started</div>
+      <div className='landingPge_heading'>
+        Let's Get Started
+      </div>
 
       <div className='landingPge_hero'>
         <div className='landingPge_img'>
@@ -26,16 +33,7 @@ export default function Landingpage() {
           <div>
             <h5>Choose</h5>
             <p>
-              Browse over 40 professional resume templates ─ or create your own
-              with a blank template.
-            </p>
-          </div>
-          <div>
-            <h5>Create Your Resume</h5>
-            <p>
-              No more writer's block! Get inspired with 55,000+ examples,
-              profile summaries, bullet points, hard/soft skills, and expert
-              tips.
+              Browse over 5 professional resume templates.
             </p>
           </div>
           <div>
@@ -45,8 +43,7 @@ export default function Landingpage() {
           <div>
             <h5>The Final Touch!</h5>
             <p>
-              Want the best resume ever? Our Premium Resume Editing team can
-              proofread, edit, and improve your resume.
+              You can save your current resume and access that resume later .
             </p>
           </div>
         </div>
@@ -56,11 +53,6 @@ export default function Landingpage() {
         <div></div>
       </div>
 
-      <div className='landingPge_btn'>
-        <Link to='/chooseTemplate'>
-          <button>Get Started on Resume Builder</button>
-        </Link>
-      </div>
     </div>
   );
 }
