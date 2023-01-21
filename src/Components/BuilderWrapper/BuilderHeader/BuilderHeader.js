@@ -90,41 +90,6 @@ export default function BuilderHeader({
             </div>
           </div>
         </div>
-
-        <div
-          style={styles.header_help_review(isMobile)}
-          className='header_help_review '
-        >
-          <a
-            title='Help'
-            className='help'
-            target='_blank'
-            rel='noreferrer'
-            href='https://cvjury.com/help-desk/'
-          >
-            {/* Help Centre */}
-            <svg className='h-2 w-2' viewBox='0 0 20 20' fill='currentColor'>
-              <path
-                fillRule='evenodd'
-                d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                clipRule='evenodd'
-              />
-            </svg>
-          </a>
-          <a
-            title='Feedback'
-            className='help'
-            target='_blank'
-            rel='noreferrer'
-            href='https://cvjury.com/product-feedback/'
-          >
-            {/* Leave Feedback */}
-            <svg viewBox='0 0 24 24' fill='#000000'>
-              <path d='M0 0h24v24H0V0z' fill='none' />
-              <path d='M15 4v7H5.17l-.59.59-.58.58V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z' />
-            </svg>
-          </a>
-        </div>
       </div>
 
       <div
