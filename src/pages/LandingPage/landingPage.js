@@ -5,7 +5,11 @@ export default function Landingpage() {
   return (
     <div className='App'>
       <div className='landingPge_logo'>
-        <img src='/assets/images/logo.png' alt='logo' />
+        <img
+          src='/assets/images/logo.png'
+          alt='logo'
+          style={{ maxWidth: '220px' }}
+        />
       </div>
 
       <div className='landingPge_heading'>Let's Get Started</div>
@@ -56,27 +60,6 @@ export default function Landingpage() {
         <Link to='/chooseTemplate'>
           <button>Get Started on Resume Builder</button>
         </Link>
-      </div>
-      <div className='landingPge_terms'>
-        <p>
-          By clicking 'Get Started', you agree to our{' '}
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://cvjury.com/terms-and-conditions/'
-          >
-            Terms and Conditions{' '}
-          </a>{' '}
-          and{' '}
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://cvjury.com/privacy-policy/'
-          >
-            Privacy Policy
-          </a>
-          .{' '}
-        </p>
       </div>
     </div>
   );
