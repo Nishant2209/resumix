@@ -99,14 +99,14 @@ export default function Login({
         <img
           src='/assets/images/vectore1.png'
           alt='graphic1'
-          style={{ maxWidth: '400px' }}
+          style={{ maxWidth: '400px', marginBottom: '-30px' }}
         />
       </div>
       <div className='resumeVector_login_right' style={{ width: 'auto' }}>
         <img
-          src='/assets/images/character_2.png'
+          src='/assets/images/vectore2.png'
           alt='graphic2'
-          style={{ maxWidth: '400px', transform: 'scaleX(-1)' }}
+          style={{ maxWidth: '400px' }}
         />
       </div>
       <div style={{ margin: '3rem' }} className=''>
