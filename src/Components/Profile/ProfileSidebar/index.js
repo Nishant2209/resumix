@@ -55,7 +55,7 @@ export default function ProfileSidebar({ page, userData }) {
           </Link>
         </div>
       </div>
-      <div className='footer'>© 2022 RESUMIX</div>
+      <div className='footer'>© 2023 RESUMIX</div>
     </div>
   );
 }
