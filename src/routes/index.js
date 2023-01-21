@@ -13,7 +13,6 @@ import ProfileResume from '../pages/ProfileResume/index';
 import ProfileUpdatePassword from '../pages/ProfileUpdatePassword/index';
 import Builder from './../pages/Builder/index';
 import ChooseTemplate from './../pages/ChooseTemplate/index';
-import BuilderViewOnly from './../pages/BuilderViewOnly/index';
 
 import axios from 'axios';
 import { ThreeDots } from 'react-loader-spinner';
