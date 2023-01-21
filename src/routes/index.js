@@ -25,8 +25,8 @@ import { ThreeDots } from 'react-loader-spinner';
 
 import { get_account_by_id, get_resume_by_userId } from '../API/index';
 
-// axios.defaults.baseURL = 'https://cvjury.app/api/';
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://resumix-backend.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:4000';
 
 const Navigation = ({ tokenValidation }) => {
   const userId = localStorage.getItem('id');
